@@ -20,11 +20,14 @@
     \end{align*}
 
     \begin{proof}
-        Let $k = 1$, then:
-        \begin{align*}
-            p(k) &= \sum_{i=1}^{k}\sum_{j=1}^{i} 2 = k (k + 1) \\
-            &= \sum_{i=1}^{1}\sum_{j=1}^{1} 2 = 1 (1 + 1) = 2
-        \end{align*}
+        Let $n = 1$, then:
+        \begin{align}
+            p(1) = \sum_{i=1}^{1}\sum_{j=1}^{i} 2 = \sum_{i=1}^{1}\sum_{j=1}^{1} 2 = 2 = 1 (1 + 1)
+        \end{align}
+        For $n = 1$, the identity is valid. Thus, for $k = 1$, we can assume:
+        \begin{align}
+            p(k) = \sum_{i=1}^{k}\sum_{j=1}^{i} 2 = k (k + 1)
+        \end{align}
     \end{proof}
 
 \end{flushleft}
