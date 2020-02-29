@@ -1,0 +1,34 @@
+% Assignment #1
+% Humam Rashid
+% Spring 2020, CISC 7214X, Prof. Cox
+
+\documentclass{scrartcl}
+\usepackage{amsmath, amsthm}
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage[shortlabels]{enumitem}
+\begin{document}
+\begin{flushleft}
+
+    Humam Rashid\\
+    Assignment 1\\
+    CISC 7214X, Prof. Cox\\
+    \bigskip
+    
+    1. Prove the following identity for any positive $n \geq 1$:
+    \begin{align*}
+        \sum_{i=1}^{n}\sum_{j=1}^{i} 2 = n (n + 1)
+    \end{align*}
+
+    \begin{proof}
+        Let $k = 1$, then:
+        
+        \begin{align}
+            p(k) &= \sum_{i=1}^{k}\sum_{j=1}^{i} 2 = k (k + 1) \\
+            &= \sum_{i=1}^{1}\sum_{j=1}^{1} 2 = 1 (1 + 1) = 2
+        \end{align}
+    \end{proof}
+
+\end{flushleft}
+\end{document}
+
+% EOF.
