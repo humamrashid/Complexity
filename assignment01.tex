@@ -129,6 +129,7 @@ SelectKthLargest(array, start, end, K) {
         time. For the top $50\%$, $m = \frac{n}{2}$, meaning the complexity would still simplify to
         $O(n)$ expected time.
     \end{proof}
+    \medskip
     \begin{proof}[Heap-Based Alternative]\let\qed\relax
         An alternative solution that does not require any sorting is to build a max-heap from the
         elements of the unsorted array in $O(n)$ time. Then, we can extract the top $K$ elements in
@@ -171,8 +172,8 @@ Kruskal-MST(E, n, T) {
         \bigskip
 
         Given the connected graph $G(E, V)$, where $V$ is the set of vertices and $E$ is the set of
-        edges, Kruskal's MST algorithm has complexity $O(E * lg(E))$ or equivalently, $O(E * lg(V)$.
-
+        edges, Kruskal's MST algorithm has complexity $O(E * lg(E))$ or equivalently, $O(E *
+        lg(V))$.
     \end{proof}
 
 \end{flushleft}
