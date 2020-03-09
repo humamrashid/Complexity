@@ -117,7 +117,7 @@ SelectKthLargest(list, start, end, K) {
         list, and \verb|K| is the element in this list that is the $K$th largest value (our target).
         The \verb|RandomizedPartition()| procedure works similarly to what one expects to find in a
         Quicksort algorithm, but picks a random pivot rather than a fixed one. Quickselect has an
-        average case complexity of $O(N)$ and a worst case analysis of $O(n^2)$. The expected linear
+        average case complexity of $O(n)$ and a worst case analysis of $O(n^2)$. The expected linear
         time algorithm is strengthened by the randomized pivot so worst case behavior is unlikely.
         \bigskip
 
@@ -130,6 +130,10 @@ SelectKthLargest(list, start, end, K) {
         complexity simplifies to $O(n)$ expected time.
     \end{proof}
     \begin{proof}[Heap-Based Alternative]\let\qed\relax
+        An alternative solution that does not require any sorting is to build a max-heap in $O(n)$
+        time, then extract the top $K$ elements in $O(K * log(K))$ time, resulting in $O(n + K *
+        log(K))$. In our problem, $K = \frac{n}{2}$. Hence, the running time is: $ = O(n +
+        \frac{n}{2} * log(\frac{n}{2}))$ = $O(n + n (\frac{log(n)}{2} - \frac{1}{2}))$.
     \end{proof}
 
     \newpage
