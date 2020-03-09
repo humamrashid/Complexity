@@ -3,7 +3,7 @@
 % Spring 2020, CISC 7214X, Prof. Cox
 
 \documentclass{scrartcl}
-\usepackage{amsmath, amsthm}
+\usepackage{amsmath, amsthm, amssymb}
 \usepackage[a4paper, margin=1in]{geometry}
 \begin{document}
 \begin{flushleft}
@@ -146,19 +146,28 @@ SelectKthLargest(array, start, end, K) {
     least amount of two-way cable so that a network that connects the cities is formed.
     \begin{proof}[Minimum Spanning Tree]\let\qed\relax
         To solve this problem, we consider the set of $n$ cities as vertices on a graph and the
-        distance between any pair of cities as its edges. Thereafter, we use a Minimum Spanning Tree
+        distance between any pair of cities as its edges. Thereafter, we use a minimum spanning tree
         (MST) algorithm, which gets us a subgraph with the complete set of vertices (cities) as in
         the original graph but a potentially smaller subset of edges (distances) with minimal weight
-        sum. Pseudo-code for Kruskal's MST algorithm based on Horowitz and Sahni's version in
-        \textit{Fundamentals of Computer Algorithms} is shown below:
+        sum. Very high-level pseudo-code for Kruskal's MST algorithm, based on Horowitz and Sahni's
+        in \textit{Fundamentals of Computer Algorithms}, is shown below:
+        \medskip
 \begin{verbatim}
-Kruskal-MST(E, Weight, n, T, minweight) {
-
+Kruskal-MST(E, n, T) {
+    T = null
+    while T contains less than n - 1 edges {
+        choose an edge (v, w) from E of lowest weight
+        delete edge (v, w) from E
+        if edge (v, w) does not create a cycle in T {
+            add edge (v, w) to T
+        } else {
+            discard edge (v, w)
+        }
+    }
 }
 \end{verbatim}
         where \verb|E| is the set of edges in the connected graph representing the map of \verb|n|
-        cities, \verb|Weight(u, v)| is the weight of edge \verb|(u, v)|, \verb|T| is the set of
-        edges in the MST and \verb|minweight| is \verb|T|'s weight sum.
+        cities and \verb|T| is the set of edges in the MST.
     \end{proof}
 
 \end{flushleft}
