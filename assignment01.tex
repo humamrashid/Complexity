@@ -132,9 +132,9 @@ SelectKthLargest(array, start, end, K) {
     \begin{proof}[Heap-Based Alternative]\let\qed\relax
         An alternative solution that does not require any sorting is to build a max-heap from the
         elements of the unsorted array in $O(n)$ time. Then, we can extract the top $K$ elements in
-        $O(K * log(K))$ time, resulting in $O(n + K * log(K))$. In our problem, $K = \frac{n}{2}$.
+        $O(K * lg(K))$ time, resulting in $O(n + K * lg(K))$. In our problem, $K = \frac{n}{2}$.
         Hence, the complexity of this algorithm to get the top $50\%$ becomes $O(n + \frac{n}{2} *
-        log(\frac{n}{2}))$ or $ O(n + n (\frac{log(n)}{2} - \frac{1}{2}))$.
+        lg(\frac{n}{2}))$ or $ O(n + n (\frac{lg(n)}{2} - \frac{1}{2}))$.
     \end{proof}
 
     \newpage
@@ -168,6 +168,11 @@ Kruskal-MST(E, n, T) {
 \end{verbatim}
         where \verb|E| is the set of edges in the connected graph representing the map of \verb|n|
         cities and \verb|T| is the set of edges in the MST.
+        \bigskip
+
+        Given the connected graph $G(E, V)$, where $V$ is the set of vertices and $E$ is the set of
+        edges, Kruskal's MST algorithm has complexity $O(E * lg(E))$ or equivalently, $O(E * lg(V)$.
+
     \end{proof}
 
 \end{flushleft}
