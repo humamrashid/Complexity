@@ -69,12 +69,12 @@
     \medskip
     \textit{Solution}. Our guess is that $T(n) = \Theta(n)$, but more specifically:
     \begin{equation}
-        T(n) \leq 4cn\ \text{for some}r c > 0
+        T(n) \leq 4cn\ \text{for some}\ c > 0
         \label{eq:1}
     \end{equation}
     We prove that $T(n) \leq 4cn$ assuming that an appropriate choice is made for the constant $c >
     0$, that $n$ is a power of $2$, and that equation~\ref{eq:1} holds for all positive $m < n$
-    (particularly for $m = \frac{n}{2} \implies T(\frac{n}{2}) \leq 4\frac{cn}{2}$):
+    (in particular for $m = \frac{n}{2} \implies T(\frac{n}{2}) \leq 4\frac{cn}{2}$):
     \begin{align*}
         T(n) &= 2cn + T(\frac{n}{2})\\
         &\leq 2cn + 4\frac{cn}{2}\\
@@ -89,6 +89,46 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     3. Given a large unsorted array of salaries, give an efficient algorithm and its average case
     complexity to print the top $50\%$ of the salaries. Hint: can you do it without sorting?
+    \begin{proof}[Selection Algorithm]\let\qed\relax
+        One algorithm that can be used to solve this problem is \textit{Quickselect}, a selection
+        algorithm which uses the partitioning technique from Quicksort. A pseudo-code version based
+        on McConnell's version in \textit{Analysis of Algorithms} is shown below:
+        \medskip
+\begin{verbatim}
+SelectKthLargest(list, start, end, K) {
+    if start < end {
+        RandomizedPartition(list, start, end, pivot)
+        if pivot == K {
+            return list[pivot]
+        } else {
+            if K < pivot {
+                return SelectKthLargest(
+                    list, pivot + 1, end, K)
+            } else {
+                return SelectKthLargest(
+                    list, start, pivot - 1, K - pivot)
+            }
+        }
+    }
+}
+\end{verbatim}
+        where \verb|list| is the list of values in an indexed sequence, \verb|start| is the index of
+        the first value in the list, \verb|end| is the index of the last value to consider in the
+        list, and \verb|K| is the element in this list that is the $K$th largest value (our target).
+        The \verb|RandomizedPartition()| procedure works similarly to what one expects to find in a
+        Quicksort algorithm, but picks a random pivot rather than a fixed one. Quickselect has an
+        average case complexity of $O(N)$ and a worst case analysis of $O(n^2)$. The expected linear
+        time algorithm is strengthened by the randomized pivot so worst case behavior is unlikely.
+        \bigskip
+
+        For this particular problem, the \verb|SelectKthLargest()| procedure would leave the array
+        with two parts, those smaller than the $K$th value and those larger than it. The array would
+        be rearranged so that that smaller values are before it and the larger ones after. This
+        means to get the top $m$ values, we can use a simple loop (after running our Quickselect
+        algorithm) to retrieve them. Therefore, retrieving the top $m$ values requires $O(n + m)$
+        time. For the top $50\%$, this means $m = \frac{n}{2}$ and for large enough $n$, the
+        complexity simplifies to $O(n)$ expected time.
+    \end{proof}
     \newpage
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 4 on graph algorithms.
