@@ -5,6 +5,7 @@
 \documentclass{scrartcl}
 \usepackage{amsmath, amsthm, amssymb}
 \usepackage[a4paper, margin=1in]{geometry}
+\usepackage[shortlabels]{enumitem}
 \usepackage{listings}
 \lstset {
     basicstyle=\ttfamily,
@@ -21,16 +22,28 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 1.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    1. Is it true that...?\\
-    \bigskip
-    \textbf{True}.\\
-    \bigskip
+    1. For each of the following statements, write if it is ``True,'' ``False,'' or ``We don't
+    know.'' Justify your answers.\\
+    \begin{enumerate}[(a)]
+        \item A problem \emph{Q} can be in $\mathcal{P}$ and $\mathcal{NP}$.
+        \item A problem \emph{Q} can be in $\mathcal{P}$ and $\mathcal{NP}$-Complete.
+        \item A problem \emph{Q} can be in $\mathcal{NP}$ and $\mathcal{NP}$-Complete.
+    \end{enumerate}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 2.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    2. Is it true that...?\\
-    \bigskip
-    \textbf{False}.\\
+    2. Let \emph{X} be a problem that is in the class $\mathcal{NP}$. For each of the following
+    statements, write if it is ``True,'' ``False,'' or ``We don't know.'' Justify your answers.\\
+    \begin{enumerate}[(a)]
+        \item Solutions to \emph{X} can be verified with a polynomial-time algorithm.
+        \item There is no polynomial-time algorithm for \emph{X}.
+        \item If there exists a polynomial-time algorithm for \emph{X}, then $\mathcal{P} =
+            \mathcal{NP}$.
+        \item If there exists a polynomial-time algorithm for \emph{X}, then there must exist a
+            polynomial-time algorithm for the Traveling Salesman Problem.
+        \item If there exists a polynomial-time algorithm for the Traveling Salesman Problem, then
+            there must exist a polynomial-time algorithm for \emph{X}.
+    \end{enumerate}
 
     
 \end{flushleft}
