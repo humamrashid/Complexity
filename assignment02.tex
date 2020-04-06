@@ -22,17 +22,27 @@
     \begin{enumerate}[(a)]
         \item A problem $Q$ can be in $\mathcal{P}$ and $\mathcal{NP}$.\\
             \medskip
-            \textbf{True}. According to the definitions of $\mathcal{P}$ and $\mathcal{NP}$ given in
-            ~\cite{modernapp}, $\mathcal{P} \subseteq \mathcal{NP}$. Therefore, if $Q \in
-            \mathcal{P}$, then $Q \in \mathcal{NP}$. This also follows from the intuitive notion
-            that $\mathcal{P}$ is the class of problems with ``efficiently computable solutions''
-            and $\mathcal{NP}$ is the class of problems with ``efficiently verifiable solutions'',
-            i.e., any solutions that are efficiently solvable must necessarily also be efficiently
-            verifiable. The reverse, whether $\mathcal{NP} \subseteq \mathcal{P}$, is not currently
-            known.
+            \textbf{True}. According to the definitions given in \cite{modernapp}, $\mathcal{P} =
+            \bigcup_{c \geq 1}$DTIME$(n^c)$, the class of languages decidable in polynomial time by
+            a \emph{deterministic} Turing machine and $\mathcal{NP} = \bigcup_{c \in
+            \mathbb{N}}$NTIME$(n^c)$, the class of languages decidable in polynomial time by a
+            \emph{nondeterministic} Turing machine. Further, it is shown that $\mathcal{P} \subseteq
+            \mathcal{NP}$. Therefore, if $Q \in \mathcal{P}$, then $Q \in \mathcal{NP}$. This also
+            follows from the intuitive notion that $\mathcal{P}$ is the class of problems with
+            ``efficiently computable solutions'' and $\mathcal{NP}$ is the class of problems with
+            ``efficiently verifiable solutions'', i.e., any solutions that are efficiently solvable
+            must necessarily also be efficiently verifiable. The reverse set membership question,
+            whether $\mathcal{NP} \subseteq \mathcal{P}$, is not currently known to be true or
+            false.
         \item A problem $Q$ can be in $\mathcal{P}$ and $\mathcal{NP}$-Complete.\\
             \medskip
-            \textbf{We don't know}.
+            \textbf{We don't know}. According to the definitions given in \cite{modernapp}, a
+            language $L'$ is $\mathcal{NP}$-Complete if $L'$ is $\mathcal{NP}$-Hard and $L' \in
+            \mathcal{NP}$, and that a language $L'$ is $\mathcal{NP}$-Hard if $L$ is polynomial-time
+            Karp reducible to $L'$ for all $L \in \mathcal{NP}$. It has not been shown for any $L$
+            that $L \in \mathcal{P}$ and $L$ is $\mathcal{NP}$-Hard. If this were to be shown, it
+            would give us an affirmitive answer to the question of whether $\mathcal{P} =
+            \mathcal{NP}$ (theorem 2.8 in \cite{modernapp}).
         \item A problem $Q$ can be in $\mathcal{NP}$ and $\mathcal{NP}$-Complete.\\
             \medskip
             \textbf{True}. This is directly from the definition of $\mathcal{NP}$-Complete.
