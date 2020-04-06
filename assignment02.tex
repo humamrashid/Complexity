@@ -21,8 +21,15 @@
     know.'' Justify your answers.\\
     \begin{enumerate}[(a)]
         \item A problem $Q$ can be in $\mathcal{P}$ and $\mathcal{NP}$.\\
-            \bigskip
-            Cite: ~\cite{modernapp}.
+            \medskip
+            \textbf{True}. According to the definitions of $\mathcal{P}$ and $\mathcal{NP}$ given in
+            ~\cite{modernapp}, $\mathcal{P} \subseteq \mathcal{NP}$. Therefore if $Q \in
+            \mathcal{P}$, then $Q \in \mathcal{NP}$. This also follows from the intuitive notion
+            that $\mathcal{P}$ is the class of problems with ``efficiently computable solutions''
+            and $\mathcal{NP}$ is the class of problems with ``efficiently verifiable solutions'',
+            i.e., any solutions that are efficiently solvable must necessarily also be efficiently
+            verifiable. The reverse, whether $\mathcal{NP} \subseteq \mathcal{P}$, is not currently
+            known.
         \item A problem $Q$ can be in $\mathcal{P}$ and $\mathcal{NP}$-Complete.
         \item A problem $Q$ can be in $\mathcal{NP}$ and $\mathcal{NP}$-Complete.
     \end{enumerate}
