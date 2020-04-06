@@ -17,11 +17,11 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 1.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    1. For each of the following statements, write if it is ``True,'' ``False,'' or ``We don't
-    know.'' Justify your answers.\\
+    1. \textbf{For each of the following statements, write if it is ``True,'' ``False,'' or ``We
+    don't know.''} Justify your answers.\\
     \begin{enumerate}[(a)]
         \item A problem $Q$ can be in $\mathcal{P}$ and $\mathcal{NP}$.\\
-            \medskip
+            \bigskip
             \textbf{True}. According to the definitions given in \cite{modernapp}, $\mathcal{P} =
             \bigcup_{c \geq 1}$DTIME$(n^c)$, the class of languages decidable in polynomial time by
             a \emph{deterministic} Turing machine and $\mathcal{NP} = \bigcup_{c \in
@@ -35,7 +35,7 @@
             whether $\mathcal{NP} \subseteq \mathcal{P}$, is not currently known to be true or
             false.
         \item A problem $Q$ can be in $\mathcal{P}$ and $\mathcal{NP}$-Complete.\\
-            \medskip
+            \bigskip
             \textbf{We don't know}. According to the definitions given in \cite{modernapp}, a
             language $L'$ is $\mathcal{NP}$-Complete if $L'$ is $\mathcal{NP}$-Hard and $L' \in
             \mathcal{NP}$, and that a language $L'$ is $\mathcal{NP}$-Hard if $L$ is polynomial-time
@@ -44,20 +44,22 @@
             would give us an affirmitive answer to the question of whether $\mathcal{P} =
             \mathcal{NP}$ (theorem 2.8 in \cite{modernapp}).
         \item A problem $Q$ can be in $\mathcal{NP}$ and $\mathcal{NP}$-Complete.\\
-            \medskip
-            \textbf{True}. This is directly from the definition of $\mathcal{NP}$-Complete.
+            \bigskip
+            \textbf{True}. This is directly from the definition of $\mathcal{NP}$-Complete: ``We say
+            that $L'$ is $\mathcal{NP}$-Complete if $L'$ is $\mathcal{NP}$-Hard and $L' \in
+            \mathcal{NP}$'' (from defintion 2.7 in \cite{modernapp}).
     \end{enumerate}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 2.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    2. Let $X$ be a problem that is in the class $\mathcal{NP}$. For each of the following
-    statements, write if it is ``True,'' ``False,'' or ``We don't know.'' Justify your answers.\\
+    2. Let $X$ be a problem that is in the class $\mathcal{NP}$. \textbf{For each of the following
+    statements, write if it is ``True,'' ``False,'' or ``We don't know.''} Justify your answers.\\
     \begin{enumerate}[(a)]
         \item Solutions to $X$ can be verified with a polynomial-time algorithm.\\
-            \medskip
+            \bigskip
             \textbf{True}. This is directly from the definition of $\mathcal{NP}$.
         \item There is no polynomial-time algorithm for $X$.\\
-            \medskip
+            \bigskip
             \textbf{We don't know}.
         \item If there exists a polynomial-time algorithm for $X$, then $\mathcal{P} =
             \mathcal{NP}$.
