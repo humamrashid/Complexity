@@ -23,15 +23,19 @@
         \item A problem $Q$ can be in $\mathcal{P}$ and $\mathcal{NP}$.\\
             \medskip
             \textbf{True}. According to the definitions of $\mathcal{P}$ and $\mathcal{NP}$ given in
-            ~\cite{modernapp}, $\mathcal{P} \subseteq \mathcal{NP}$. Therefore if $Q \in
+            ~\cite{modernapp}, $\mathcal{P} \subseteq \mathcal{NP}$. Therefore, if $Q \in
             \mathcal{P}$, then $Q \in \mathcal{NP}$. This also follows from the intuitive notion
             that $\mathcal{P}$ is the class of problems with ``efficiently computable solutions''
             and $\mathcal{NP}$ is the class of problems with ``efficiently verifiable solutions'',
             i.e., any solutions that are efficiently solvable must necessarily also be efficiently
             verifiable. The reverse, whether $\mathcal{NP} \subseteq \mathcal{P}$, is not currently
             known.
-        \item A problem $Q$ can be in $\mathcal{P}$ and $\mathcal{NP}$-Complete.
-        \item A problem $Q$ can be in $\mathcal{NP}$ and $\mathcal{NP}$-Complete.
+        \item A problem $Q$ can be in $\mathcal{P}$ and $\mathcal{NP}$-Complete.\\
+            \medskip
+            \textbf{We don't know}.
+        \item A problem $Q$ can be in $\mathcal{NP}$ and $\mathcal{NP}$-Complete.\\
+            \medskip
+            \textbf{True}. This is directly from the definition of $\mathcal{NP}$-Complete.
     \end{enumerate}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 2.
@@ -39,8 +43,12 @@
     2. Let $X$ be a problem that is in the class $\mathcal{NP}$. For each of the following
     statements, write if it is ``True,'' ``False,'' or ``We don't know.'' Justify your answers.\\
     \begin{enumerate}[(a)]
-        \item Solutions to $X$ can be verified with a polynomial-time algorithm.
-        \item There is no polynomial-time algorithm for $X$.
+        \item Solutions to $X$ can be verified with a polynomial-time algorithm.\\
+            \medskip
+            \textbf{True}. This is directly from the definition of $\mathcal{NP}$.
+        \item There is no polynomial-time algorithm for $X$.\\
+            \medskip
+            \textbf{We don't know}.
         \item If there exists a polynomial-time algorithm for $X$, then $\mathcal{P} =
             \mathcal{NP}$.
         \item If there exists a polynomial-time algorithm for $X$, then there must exist a
