@@ -47,7 +47,8 @@
             \bigskip
             \textbf{True}. This is directly from the definition of $\mathcal{NP}$-Complete: ``We say
             that $L'$ is $\mathcal{NP}$-Complete if $L'$ is $\mathcal{NP}$-Hard and $L' \in
-            \mathcal{NP}$'' (from definition 2.7 in \cite{modernapp}).
+            \mathcal{NP}$'' (from definition 2.7 in \cite{modernapp}). If $Q$ is in
+            $\mathcal{NP}$-Complete, then $Q$ is necessarily in $\mathcal{NP}$.
     \end{enumerate}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 2.
@@ -68,7 +69,12 @@
             still uncertain (until and unless it is also proven that $\mathcal{NP} \subseteq
             \mathcal{P}$).
         \item If there exists a polynomial-time algorithm for $X$, then $\mathcal{P} =
-            \mathcal{NP}$.
+            \mathcal{NP}$.\\
+            \bigskip
+            \textbf{False} (assuming $X$ is not also $\mathcal{NP}$-Hard). If $X$ were also
+            $\mathcal{NP}$-Hard (such that all problems in $\mathcal{NP}$ were polynomial-time Karp
+            reducible to $X$), the claim would have been true (definition 2.7 and theorem 2.8 in
+            \cite{modernapp}).
         \item If there exists a polynomial-time algorithm for $X$, then there must exist a
             polynomial-time algorithm for the Traveling Salesman Problem.
         \item If there exists a polynomial-time algorithm for the Traveling Salesman Problem, then
