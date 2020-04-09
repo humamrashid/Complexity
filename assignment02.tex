@@ -57,10 +57,16 @@
     \begin{enumerate}[(a)]
         \item Solutions to $X$ can be verified with a polynomial-time algorithm.\\
             \bigskip
-            \textbf{True}. This is directly from the definition of $\mathcal{NP}$.
+            \textbf{True}. This is directly from the definition of $\mathcal{NP}$ (definition 2.1 in
+            \cite{modernapp}); stated infromally, we can say a language $L$ is in $\mathcal{NP}$ if
+            membership in $L$ can be verified efficiently (i.e., in polynomial time).
         \item There is no polynomial-time algorithm for $X$.\\
             \bigskip
-            \textbf{We don't know}.
+            \textbf{We don't know}. If it was known that $X \in \mathcal{P} \subseteq \mathcal{NP}$,
+            then the claim would have been false (i.e., it would give us confidence that such an
+            algorithm exists), but for the more general case of $X \in \mathcal{NP}$, the answer is
+            still uncertain (until and unless it is also proven that $\mathcal{NP} \subseteq
+            \mathcal{P}$).
         \item If there exists a polynomial-time algorithm for $X$, then $\mathcal{P} =
             \mathcal{NP}$.
         \item If there exists a polynomial-time algorithm for $X$, then there must exist a
