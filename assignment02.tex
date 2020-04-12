@@ -59,7 +59,7 @@
         \item Solutions to $X$ can be verified with a polynomial-time algorithm.\\
             \bigskip
             \textbf{True}. This is directly from the definition of $\mathcal{NP}$ (definition 2.1 in
-            \cite{modernapp}); stated infromally, we can say a language $L$ is in $\mathcal{NP}$ if
+            \cite{modernapp}); stated informally, we can say a language $L$ is in $\mathcal{NP}$ if
             membership in $L$ can be verified efficiently (i.e., in polynomial time).
         \item There is no polynomial-time algorithm for $X$.\\
             \bigskip
@@ -75,12 +75,34 @@
             $\mathcal{NP}$-Hard (such that all problems in $\mathcal{NP}$ were polynomial-time Karp
             reducible to $X$), the claim would have been true (definition 2.7 and theorem 2.8 in
             \cite{modernapp}). Under this additional assumption of $X$ being both in $\mathcal{NP}$
-            and $\mathcal{NP}$-Hard, $X$ would also fit the description of being
-            $\mathcal{NP}$-Complete.
+            and $\mathcal{NP}$-Hard, $X$ would also fit the description (as stated above) of being
+            $\mathcal{NP}$-Complete. Since having a polynomial-time algorithm for $X$ implies $X \in
+            \mathcal{P}$, $\mathcal{P} = \mathcal{NP}$ must be true according to theorem 2.8: ``If
+            language $L$ is $\mathcal{NP}$-Complete, then $L \in \mathcal{P}$ \emph{if and only if}
+            $\mathcal{P} = \mathcal{NP}$''. The biconditional tells us that we can assume the claim
+            is false if $X$ is not $\mathcal{NP}$-Complete. If it is not known whether $X$ is
+            $\mathcal{NP}$-Hard or not, then the claim becomes uncertain.
         \item If there exists a polynomial-time algorithm for $X$, then there must exist a
-            polynomial-time algorithm for the Traveling Salesman Problem.
+            polynomial-time algorithm for the Traveling Salesman Problem.\\
+            \bigskip
+            \textbf{False} (assuming $X$ is not also $\mathcal{NP}$-Hard). Using essentially the
+            same reasoning as the question directly above, we can say that since $X$ is known to be
+            in $\mathcal{NP}$, $X$ would also need to be $\mathcal{NP}$-Hard so that any problem in
+            $\mathcal{NP}$ (such as the Traveling Salesman Problem) is proven to be polynomial-time
+            Karp reducible to $X$. Being in both $\mathcal{NP}$ and $\mathcal{NP}$-Hard would imply
+            $X$ is $\mathcal{NP}$-Complete. Hence, again by theorem 2.8 (quoted in part above), we
+            can say that $X$ not being $\mathcal{NP}$-Complete implies that the claim is false. Also
+            as above, if $X$'s $\mathcal{NP}$-Hardness is uncertain, then the claim is uncertain as
+            well.
         \item If there exists a polynomial-time algorithm for the Traveling Salesman Problem, then
-            there must exist a polynomial-time algorithm for $X$.
+            there must exist a polynomial-time algorithm for $X$.\\
+            \bigskip
+            \textbf{True}. The Traveling Salesman Problem (TSP) is known to be
+            $\mathcal{NP}$-Complete according to \cite{modernapp}. Since $\mathcal{NP}$-Completeness
+            implies the problem is both in $\mathcal{NP}$ and $\mathcal{NP}$-Hard, all problems in
+            $\mathcal{NP}$ must be polynomial-time Karp reducible to the TSP (from definition 2.7
+            partially quoted above). In other words, the TSP would be ``at least as hard'' as $X$
+            and TSP $\in \mathcal{P}$ implies $X \in \mathcal{P}$.
     \end{enumerate}
 
     \bibliography{complexity}
