@@ -32,7 +32,7 @@
     2. Solve the following recurrence and prove the solution correct with induction:
     \begin{align*}
         T(1) &= 0\\
-        T(n) &= n + T(\frac{n}{2})
+        T(n) &= n + 2 T(\frac{n}{2})
     \end{align*}
     \textit{Solution}: $T(n) = n lg(n)$, by guessing.
     \medskip
@@ -41,11 +41,20 @@
         \begin{align*}
             T(k) &= k lg(k)\\
             T(n) &= n + 2 T(\frac{n}{2})\\
-            T(n) &= n + 2 (\frac{n}{2} lg(n) - \frac{n}{2})\\
-            T(n) &= n + (n lg(n) - n)\\
-            T(n) &= n lg(n)
+                 &= n + 2 (\frac{n}{2} lg(n) - \frac{n}{2})\\
+                 &= n + n lg(n) - n\\
+                 &= n lg(n)
         \end{align*}
     \end{proof}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Problem 3 on data structure for insertion and max extraction for integers.
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    3. Suppose you want to be able to perform the following 2 operations on a set of integers.
+    Insert a new item and remove the maximum item. Describe a data structure that supports this and
+    analyze its running time.\\
+    \bigskip
+    \textit{Solution}: One data structure that readily supports the given requirements is a
+    Max-Priority Queue. A Max-Priority Queue can be built on top of a Max-Heap.
 
 \end{flushleft}
 \end{document}
