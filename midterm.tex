@@ -33,6 +33,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 2 on recurrence equations.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \bigskip
     \noindent
     2. Solve the following recurrence and prove the solution correct with induction:
     \begin{align*}
@@ -54,6 +55,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 3 on data structure for insertion and max extraction for set of integers.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \bigskip
     \noindent
     3. Suppose you want to be able to perform the following 2 operations on a set of integers.
     Insert a new item and remove the maximum item. Describe a data structure that supports this and
@@ -98,6 +100,53 @@
             $O(|E|\;lg\,n)$.
         \item If \verb|EXTRACT-MIN| is implemented using a Fibonacci Heap, then Dijkstra's shortest
             path algorithm has time complexity: $O(|V|\;lg\,|V| + |E|)$ or $O(n\;lg\,n + |E|)$.
+    \end{enumerate}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Problem 7 on complexity classes.
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \bigskip
+    \noindent
+    7. How do we know that \textsf{NSPACE $=$ PSPACE}?\\
+
+    \noindent
+    \textit{Solution}: This is a direct result of Savitch's theorem.\\
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Problem 8 on complexity classes.
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \bigskip
+    \noindent
+    8. Let $X$ be a problem that is in the class $\mathcal{NP}$. For each of the following, write if
+    it is ``True,'' ``False,'' or ``We don't know.'' Justify your answer.
+    \begin{enumerate}[(a)]
+        \item Solutions to $X$ can be verified with a polynomial-time algorithm.
+
+            \textbf{True}. This is directly from the definition of $\mathcal{NP}$.
+
+        \item There is no polynomial-time algorithm for $X$.
+
+            \textbf{We don't know}. If it was known that $X \in \mathcal{P} \subseteq \mathcal{NP}$,
+            then the claim would have been false (i.e., it would give us confidence that such an
+            algorithm exists), but for the more general case of $X \in \mathcal{NP}$, the answer is
+            still uncertain (until and unless it is also proven that $\mathcal{NP} \subseteq
+            \mathcal{P}$).
+
+        \item If $X$ is $\mathcal{NP}$-Hard, then $X$ is $\mathcal{NP}$-Complete.
+
+            \textbf{True}. An $\mathcal{NP}$-Complete problem is one that is $\mathcal{NP}$-Hard and
+            also in $\mathcal{NP}$, therefore this is directly from the definition of
+            $\mathcal{NP}$-Complete.
+
+        \item If there exists a polynomial-time algorithm for SAT, then there exists a
+            polynomial-time algorithm for $X$.
+
+            \textbf{True}. The SAT problem is known to be $\mathcal{NP}$-Complete. Since
+            $\mathcal{NP}$-Completeness implies the problem is both in $\mathcal{NP}$ and
+            $\mathcal{NP}$-Hard, all problems in $\mathcal{NP}$ must be polynomial-time Karp
+            reducible to SAT (by definition of $\mathcal{NP}$-Hard). In other words, SAT would be
+            ``at least as hard'' as $X$ and SAT $\in \mathcal{P}$ therefore implies $X \in
+            \mathcal{P}$.
     \end{enumerate}
 
 \end{document}
