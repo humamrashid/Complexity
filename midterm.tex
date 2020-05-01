@@ -23,7 +23,7 @@
     \textit{Solution}:
     \begin{align*}
         \sum_{i=1}^{n} 4i &= 4 \sum_{i=1}^{n} i\\
-                          &= 4 (\frac{n (n + 1)}{2})\\
+                          &= 4 (\frac{n (n + 1)}{2})\;\text{by sum of first $n$ natural numbers}\\
                           &= 2n(n + 1)
     \end{align*}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -35,13 +35,15 @@
         T(n) &= n + T(\frac{n}{2})
     \end{align*}
     \textit{Solution}: $T(n) = n lg(n)$, by guessing.
-    \bigskip
+    \medskip
     \begin{proof}
         For $k < n$, we have:\\
         \begin{align*}
             T(k) &= k lg(k)\\
-            T(n) &= n + 2 T(\frac{n}{2})
-            T(n) &= 
+            T(n) &= n + 2 T(\frac{n}{2})\\
+            T(n) &= n + 2 (\frac{n}{2} lg(n) - \frac{n}{2})\\
+            T(n) &= n + (n lg(n) - n)\\
+            T(n) &= n lg(n)
         \end{align*}
     \end{proof}
 
