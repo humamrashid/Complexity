@@ -1,0 +1,51 @@
+% Midterm.
+% Humam Rashid
+% Spring 2020, CISC 7214X, Prof. Cox
+
+\documentclass{scrartcl}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage[a4paper, margin=1in]{geometry}
+\begin{document}
+\begin{flushleft}
+
+    Humam Rashid\\
+    Midterm\\
+    CISC 7214X, Prof. Cox\\
+    \bigskip
+    
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Problem 1 on proof by induction.
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    1. Solve the summation.
+    \begin{align*}
+        \sum_{i=1}^{n} 4i
+    \end{align*}
+    \textit{Solution}:
+    \begin{align*}
+        \sum_{i=1}^{n} 4i &= 4 \sum_{i=1}^{n} i\\
+                          &= 4 (\frac{n (n + 1)}{2})\\
+                          &= 2n(n + 1)
+    \end{align*}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Problem 2 on recurrence equations.
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    2. Solve the following recurrence and prove the solution correct with induction:
+    \begin{align*}
+        T(1) &= 0\\
+        T(n) &= n + T(\frac{n}{2})
+    \end{align*}
+    \textit{Solution}: $T(n) = n lg(n)$, by guessing.
+    \bigskip
+    \begin{proof}
+        For $k < n$, we have:\\
+        \begin{align*}
+            T(k) &= k lg(k)\\
+            T(n) &= n + 2 T(\frac{n}{2})
+            T(n) &= 
+        \end{align*}
+    \end{proof}
+
+\end{flushleft}
+\end{document}
+
+% EOF.
