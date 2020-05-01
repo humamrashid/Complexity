@@ -5,6 +5,7 @@
 \documentclass{scrartcl}
 \usepackage{amsmath, amsthm, amssymb}
 \usepackage[a4paper, margin=1in]{geometry}
+\usepackage[shortlabels]{enumitem}
 \begin{document}
 \begin{flushleft}
     Humam Rashid\\
@@ -24,7 +25,8 @@
     \textit{Solution}:
     \begin{align*}
         \sum_{i=1}^{n} 4i &= 4 \sum_{i=1}^{n} i\\
-                          &= 4 (\frac{n (n + 1)}{2})\;\text{by sum of first $n$ natural numbers}\\
+                          &= 4 \Bigg(\frac{n (n + 1)}{2}\Bigg)\;\text{by sum of first $n$ natural
+                          numbers}\\
                           &= 2n(n + 1)
     \end{align*}
 
@@ -40,7 +42,7 @@
     \textit{Solution}: $T(n) = n\;lg(n)$, by guessing.
     \medskip
     \begin{proof}
-        For $k < n$, we have:\\
+        For $k < n$, we have:
         \begin{align*}
             T(k) &= k\;lg(k)\\
             T(n) &= n + 2 T(\frac{n}{2})\\
@@ -50,7 +52,7 @@
         \end{align*}
     \end{proof}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % Problem 3 on data structure for insertion and max extraction for integers.
+    % Problem 3 on data structure for insertion and max extraction for set of integers.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \noindent
     3. Suppose you want to be able to perform the following 2 operations on a set of integers.
@@ -59,7 +61,7 @@
 
     \noindent
     \textit{Solution}: One data structure that readily supports the given requirements is a
-    Max-Priority Queue. A Max-Priority Queue can be built on top of a Max-Heap. Building the
+    \emph{Max-Priority Queue}. A Max-Priority Queue can be built on top of a Max-Heap. Building the
     Max-Heap from a set of $n$ unsorted integers takes $O(n)$ time. Removing the maximum item is an
     $O(lg\,n)$ operation since returning the maximum can be done in constant time but maintaining
     the Max-Heap takes $O(lg\,n)$ time. Inserting an item into a Max-Heap with $n$ items also takes
@@ -67,10 +69,36 @@
     defined in Cormen et al., effectively making it a simple abstraction over a Max-Heap).
 
     \newpage
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Problem 4 on data structure on algorithm for finding shortest-path tree in a network.
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \noindent
     4. Suppose you are given a network with $n$ cities, and a direct connection between each pair of
     cities with the distance between them. Given a starting city $s$, describe an algorithm to find
-    the shortest path from $s$ to each city in the network. Analyze the complexity.
+    the shortest path from $s$ to each city in the network. Analyze the complexity.\\
+
+    \noindent
+    \textit{Solution}: An effective algorithm to use here is \emph{Dijkstra's Shortest Path
+    Algorithm}. This algorithm can be use to construct a shortest-path tree from the network of $n$
+    cities, using $s$ as the starting node. The time complexity of Dijkstra's shortest path
+    algorithm is dependent on the data structure used to implement the procedure that gives us the
+    shortest-path estimate for a vertex $u \in V - S$, where $V$ is the set of vertices representing
+    the cities (i.e., $|V| = n$) and $S$ is the set of vertices for which the final shortest-path
+    weights from $s$ are already determined. Given a procedure \verb|EXTRACT-MIN()| to get $u$, the
+    following describes several well known methods of implementing the procedure and the resulting
+    overall time complexity of Dijktra's shortest path algorithm ($E$ is the set of edges in the
+    network):
+    \begin{enumerate}[(a)]
+        \item If \verb|EXTRACT-MIN| is implemented using a simple linked-list or array requiring
+            linear search to find the minimum, Dijkstra's shortest path algorithm has time
+            complexity: $O(|V|^2)$ or $O(n^2)$.
+        \item If \verb|EXTRACT-MIN| is implemented using a Binary-Min Heap, then Dijkstra's shortest
+            path algorithm has time complexity: $O((|V| + |E|)\;lg\,|V|)$ or $O((n + |E|)\;lg\,n)$.
+            For connected networks (as in our case), this further reduces to $O(|E|\;lg\,|V|)$ or
+            $O(|E|\;lg\,n)$.
+        \item If \verb|EXTRACT-MIN| is implemented using a Fibonacci Heap, then Dijkstra's shortest
+            path algorithm has time complexity: $O(|V|\;lg\,|V| + |E|)$ or $O(n\;lg\,n + |E|)$.
+    \end{enumerate}
 
 \end{document}
 
