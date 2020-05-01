@@ -54,7 +54,12 @@
     analyze its running time.\\
     \bigskip
     \textit{Solution}: One data structure that readily supports the given requirements is a
-    Max-Priority Queue. A Max-Priority Queue can be built on top of a Max-Heap.
+    Max-Priority Queue. A Max-Priority Queue can be built on top of a Max-Heap. Building the
+    Max-Heap from a set of $n$ unsorted integers takes $O(n)$ time. Removing the maximum item is an
+    $O(lg(n))$ operation since returning the maximum can be done in constant time but maintaining
+    the Max-Heap takes $O(lg(n))$ time. Inserting an item into a Max-Heap with $n$ items also takes
+    $O(lg(n))$ because of the Max-Heap maintenance procedure. (I am using Max-Priority Queue here as
+    defined in Cormen et al., effectively making it a simple abstraction over a Max-Heap).
 
 \end{flushleft}
 \end{document}
