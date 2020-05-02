@@ -9,13 +9,13 @@
 \begin{document}
 \begin{flushleft}
     Humam Rashid\\
-    Midterm\\
+    Midterm, Spring 2020\\
     CISC 7214X, Prof. Cox\\
 \end{flushleft}
     \bigskip
     
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % Problem 1 on proof by summations.
+    % Problem 1 on solving summations.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \noindent
     1. Solve the summation.\\
@@ -31,7 +31,7 @@
     \end{align*}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % Problem 2 on recurrence equations.
+    % Problem 2 on solving and proving recurrence equations.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \bigskip
     \noindent
@@ -80,7 +80,7 @@
 
     \noindent
     \textit{Answer}: An effective algorithm to use here is \emph{Dijkstra's Shortest Path
-    Algorithm}. This algorithm can be use to construct a shortest-path tree from the network of $n$
+    Algorithm}. This algorithm can be used to construct a shortest-path tree from the network of $n$
     cities, using $s$ as the starting node. The time complexity of Dijkstra's shortest path
     algorithm is dependent on the data structure used to implement the procedure that gives us the
     shortest-path estimate for a vertex $u \in V - S$, where $V$ is the set of vertices representing
@@ -125,27 +125,27 @@
     \begin{enumerate}[(a)]
         \item Solutions to $X$ can be verified with a polynomial-time algorithm.\\
 
-            \textbf{True}. This is directly from the definition of $\mathcal{NP}$.\\
+            \textit{True}. This is directly from the definition of $\mathcal{NP}$.\\
         \item There is no polynomial-time algorithm for $X$.\\
 
-            \textbf{We don't know}. If it was known that $X \in \mathcal{P} \subseteq \mathcal{NP}$,
+            \textit{We don't know}. If it was known that $X \in \mathcal{P} \subseteq \mathcal{NP}$,
             then the claim would have been false (i.e., it would give us confidence that such an
             algorithm exists), but for the more general case of $X \in \mathcal{NP}$, the answer is
             still uncertain (until and unless it is also proven that $\mathcal{NP} \subseteq
             \mathcal{P}$).\\
         \item If $X$ is $\mathcal{NP}$-Hard, then $X$ is $\mathcal{NP}$-Complete.\\
 
-            \textbf{True}. An $\mathcal{NP}$-Complete problem is one that is $\mathcal{NP}$-Hard and
+            \textit{True}. An $\mathcal{NP}$-Complete problem is one that is $\mathcal{NP}$-Hard and
             also in $\mathcal{NP}$, therefore this is directly from the definition of
             $\mathcal{NP}$-Complete.\\
         \item If there exists a polynomial-time algorithm for SAT, then there exists a
             polynomial-time algorithm for $X$.\\
 
-            \textbf{True}. The SAT problem is known to be $\mathcal{NP}$-Complete. Since
+            \textit{True}. The SAT problem is known to be $\mathcal{NP}$-Complete. Since
             $\mathcal{NP}$-Completeness implies the problem is both in $\mathcal{NP}$ and
             $\mathcal{NP}$-Hard, all problems in $\mathcal{NP}$ must be polynomial-time Karp
             reducible to SAT (by definition of $\mathcal{NP}$-Hard). In other words, SAT is ``at
-            least as hard'' as $X$ and SAT $\in \mathcal{P}$ therefore implies $X \in
+            least as hard'' as $X$ and therefore SAT $\in \mathcal{P}$ implies $X \in
             \mathcal{P}$.\\
     \end{enumerate}
 
