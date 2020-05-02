@@ -18,11 +18,11 @@
     % Problem 1 on proof by summations.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \noindent
-    1. Solve the summation.
+    1. Solve the summation.\\
     \begin{align*}
         \sum_{i=1}^{n} 4i
     \end{align*}
-    \textit{Solution}:
+    \textit{Solution}:\\
     \begin{align*}
         \sum_{i=1}^{n} 4i &= 4 \sum_{i=1}^{n} i\\
                           &= 4 \Bigg(\frac{n (n + 1)}{2}\Bigg)\;\text{by sum of first $n$ natural
@@ -35,13 +35,12 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \bigskip
     \noindent
-    2. Solve the following recurrence and prove the solution correct with induction:
+    2. Solve the following recurrence and prove the solution correct with induction:\\
     \begin{align*}
         T(1) &= 0\\
         T(n) &= n + 2 T(\frac{n}{2})
     \end{align*}
-    \textit{Solution}: $T(n) = n\;lg(n)$, by guessing.
-    \medskip
+    \textit{Solution}: $T(n) = n\;lg(n)$, by guessing.\\
     \begin{proof}
         For $k < n$, we have:
         \begin{align*}
@@ -62,13 +61,13 @@
     analyze its running time.\\
 
     \noindent
-    \textit{Solution}: One data structure that readily supports the given requirements is a
+    \textit{Answer}: One data structure that readily supports the given requirements is a
     \emph{Max-Priority Queue}. A Max-Priority Queue can be built on top of a Max-Heap. Building the
     Max-Heap from a set of $n$ unsorted integers takes $O(n)$ time. Removing the maximum item is an
     $O(lg\,n)$ operation since returning the maximum can be done in constant time but maintaining
     the Max-Heap takes $O(lg\,n)$ time. Inserting an item into a Max-Heap with $n$ items also takes
     $O(lg\,n)$ because of the Max-Heap maintenance procedure. (I am using Max-Priority Queue here as
-    defined in Cormen et al., effectively making it a simple abstraction over a Max-Heap).
+    defined in Cormen et al., effectively making it a simple abstraction over a Max-Heap).\\
 
     \newpage
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -80,7 +79,7 @@
     the shortest path from $s$ to each city in the network. Analyze the complexity.\\
 
     \noindent
-    \textit{Solution}: An effective algorithm to use here is \emph{Dijkstra's Shortest Path
+    \textit{Answer}: An effective algorithm to use here is \emph{Dijkstra's Shortest Path
     Algorithm}. This algorithm can be use to construct a shortest-path tree from the network of $n$
     cities, using $s$ as the starting node. The time complexity of Dijkstra's shortest path
     algorithm is dependent on the data structure used to implement the procedure that gives us the
@@ -89,17 +88,17 @@
     weights from $s$ are already determined. Given a procedure \verb|EXTRACT-MIN()| to get $u$, the
     following describes several well known methods of implementing the procedure and the resulting
     overall time complexity of Dijkstra's shortest path algorithm ($E$ is the set of edges in the
-    network):
+    network):\\
     \begin{enumerate}[(a)]
         \item If \verb|EXTRACT-MIN| is implemented using a simple linked-list or array requiring
             linear search to find the minimum, Dijkstra's shortest path algorithm has time
-            complexity: $O(|V|^2)$ or $O(n^2)$.
+            complexity: $O(|V|^2)$ or $O(n^2)$.\\
         \item If \verb|EXTRACT-MIN| is implemented using a Binary-Min Heap, then Dijkstra's shortest
             path algorithm has time complexity: $O((|V| + |E|)\;lg\,|V|)$ or $O((n + |E|)\;lg\,n)$.
             For connected networks (as in our case), this further reduces to $O(|E|\;lg\,|V|)$ or
-            $O(|E|\;lg\,n)$.
+            $O(|E|\;lg\,n)$.\\
         \item If \verb|EXTRACT-MIN| is implemented using a Fibonacci Heap, then Dijkstra's shortest
-            path algorithm has time complexity: $O(|V|\;lg\,|V| + |E|)$ or $O(n\;lg\,n + |E|)$.
+            path algorithm has time complexity: $O(|V|\;lg\,|V| + |E|)$ or $O(n\;lg\,n + |E|)$.\\
     \end{enumerate}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -107,10 +106,14 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \bigskip
     \noindent
-    7. How do we know that \textsf{NSPACE $=$ PSPACE}?\\
+    7. How do we know that \textsf{NPSPACE $=$ PSPACE}?\\
 
     \noindent
-    \textit{Solution}: This is a direct result of Savitch's theorem.\\
+    \textit{Answer}: This is a direct result of Savitch's theorem. Savitch's theorem tells us that
+    for space complexity, any nondeterministic Turing machine that uses $f(n)$ space can be
+    converted to a deterministic Turing machine that uses only $f^2(n)$ space. \textsf{NPSPACE $=$
+    PSPACE} is a direct result based on the fact that the square of any polynomial is still a
+    polynomial.\\
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 8 on complexity classes.
@@ -118,34 +121,32 @@
     \bigskip
     \noindent
     8. Let $X$ be a problem that is in the class $\mathcal{NP}$. For each of the following, write if
-    it is ``True,'' ``False,'' or ``We don't know.'' Justify your answer.
+    it is ``True,'' ``False,'' or ``We don't know.'' Justify your answer.\\
     \begin{enumerate}[(a)]
-        \item Solutions to $X$ can be verified with a polynomial-time algorithm.
+        \item Solutions to $X$ can be verified with a polynomial-time algorithm.\\
 
-            \textbf{True}. This is directly from the definition of $\mathcal{NP}$.
-
-        \item There is no polynomial-time algorithm for $X$.
+            \textbf{True}. This is directly from the definition of $\mathcal{NP}$.\\
+        \item There is no polynomial-time algorithm for $X$.\\
 
             \textbf{We don't know}. If it was known that $X \in \mathcal{P} \subseteq \mathcal{NP}$,
             then the claim would have been false (i.e., it would give us confidence that such an
             algorithm exists), but for the more general case of $X \in \mathcal{NP}$, the answer is
             still uncertain (until and unless it is also proven that $\mathcal{NP} \subseteq
-            \mathcal{P}$).
-
-        \item If $X$ is $\mathcal{NP}$-Hard, then $X$ is $\mathcal{NP}$-Complete.
+            \mathcal{P}$).\\
+        \item If $X$ is $\mathcal{NP}$-Hard, then $X$ is $\mathcal{NP}$-Complete.\\
 
             \textbf{True}. An $\mathcal{NP}$-Complete problem is one that is $\mathcal{NP}$-Hard and
             also in $\mathcal{NP}$, therefore this is directly from the definition of
-            $\mathcal{NP}$-Complete.
-
+            $\mathcal{NP}$-Complete.\\
         \item If there exists a polynomial-time algorithm for SAT, then there exists a
-            polynomial-time algorithm for $X$.
+            polynomial-time algorithm for $X$.\\
 
             \textbf{True}. The SAT problem is known to be $\mathcal{NP}$-Complete. Since
             $\mathcal{NP}$-Completeness implies the problem is both in $\mathcal{NP}$ and
             $\mathcal{NP}$-Hard, all problems in $\mathcal{NP}$ must be polynomial-time Karp
             reducible to SAT (by definition of $\mathcal{NP}$-Hard). In other words, SAT is ``at
-            least as hard'' as $X$ and SAT $\in \mathcal{P}$ therefore implies $X \in \mathcal{P}$.
+            least as hard'' as $X$ and SAT $\in \mathcal{P}$ therefore implies $X \in
+            \mathcal{P}$.\\
     \end{enumerate}
 
 \end{document}
