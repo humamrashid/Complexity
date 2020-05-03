@@ -25,7 +25,7 @@
     \textit{Solution}:
     \begin{align*}
         \sum_{i=1}^{n} 4i &= 4 \sum_{i=1}^{n} i\\[6pt]&\text{by distributive identity}\\[6pt]
-                          &= 4 \Bigg(\frac{n (n + 1)}{2}\Bigg)\\[6pt]&\text{by sum of first $n$
+                          &= 4 \bigg(\frac{n (n + 1)}{2}\bigg)\\[6pt]&\text{by sum of first $n$
                           natural numbers}\\[6pt]
                           &= 2n(n + 1)
     \end{align*}
@@ -38,15 +38,15 @@
     2. Solve the following recurrence and prove the solution correct with induction:
     \begin{align*}
         T(1) &= 0\\
-        T(n) &= n + 2 T(\frac{n}{2})
+        T(n) &= n + 2 T\bigg(\frac{n}{2}\bigg)
     \end{align*}
-    \textit{Solution}: $T(n) = n\;lg(n)$, claimed.
+    \textit{Solution}: $T(n) = n\;lg(n)$, claimed.\\
     \begin{proof}
         For $k < n$, we have:
         \begin{align*}
             T(k) &= k\;lg(k)\\
-            T(n) &= n + 2 T(\frac{n}{2})\\
-                 &= n + 2 (\frac{n}{2}\;lg(n) - \frac{n}{2})\\
+            T(n) &= n + 2 T\bigg(\frac{n}{2}\bigg)\\
+                 &= n + 2 \bigg(\frac{n}{2}\;lg(n) - \frac{n}{2}\bigg)\\
                  &= n + n\;lg(n) - n\\
                  &= n\;lg(n)
         \end{align*}
@@ -145,15 +145,15 @@
             \textit{True}. An $\mathcal{NP}$-Complete problem is one that is $\mathcal{NP}$-Hard and
             also in $\mathcal{NP}$, therefore this is directly from the definition of
             $\mathcal{NP}$-Complete.\\
-        \item If there exists a polynomial-time algorithm for SAT, then there exists a
+        \item If there exists a polynomial-time algorithm for \textsf{SAT}, then there exists a
             polynomial-time algorithm for $X$.\\
 
-            \textit{True}. The SAT problem is known to be $\mathcal{NP}$-Complete. Since
+            \textit{True}. The \textsf{SAT} problem is known to be $\mathcal{NP}$-Complete. Since
             $\mathcal{NP}$-Completeness implies the problem is both in $\mathcal{NP}$ and
             $\mathcal{NP}$-Hard, all problems in $\mathcal{NP}$ must be polynomial-time Karp
-            reducible to SAT (by definition of $\mathcal{NP}$-Hard). In other words, SAT is ``at
-            least as hard'' as $X$ and therefore SAT $\in \mathcal{P}$ implies $X \in
-            \mathcal{P}$.
+            reducible to \textsf{SAT} (by definition of $\mathcal{NP}$-Hard). In other words,
+            \textsf{SAT} is ``at least as hard'' as $X$ and therefore \textsf{SAT} $\in \mathcal{P}$
+            implies $X \in \mathcal{P}$.
     \end{enumerate}
 
 \end{document}
