@@ -10,7 +10,7 @@
 \begin{flushleft}
     Humam Rashid\\
     Midterm, Spring 2020\\
-    CISC 7214X, Prof. Cox\\
+    CISC 7214X, Prof. Cox
 \end{flushleft}
     \bigskip
     
@@ -18,15 +18,15 @@
     % Problem 1 on solving summations.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \noindent
-    1. Solve the summation.\\
+    1. Solve the summation.
     \begin{align*}
         \sum_{i=1}^{n} 4i
     \end{align*}
-    \textit{Solution}:\\
+    \textit{Solution}:
     \begin{align*}
-        \sum_{i=1}^{n} 4i &= 4 \sum_{i=1}^{n} i\\
-                          &= 4 \Bigg(\frac{n (n + 1)}{2}\Bigg)\;\text{by sum of first $n$ natural
-                          numbers}\\
+        \sum_{i=1}^{n} 4i &= 4 \sum_{i=1}^{n} i\\[6pt]&\text{by distributive identity}\\[6pt]
+                          &= 4 \Bigg(\frac{n (n + 1)}{2}\Bigg)\\[6pt]&\text{by sum of first $n$
+                          natural numbers}\\[6pt]
                           &= 2n(n + 1)
     \end{align*}
 
@@ -35,12 +35,12 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \bigskip
     \noindent
-    2. Solve the following recurrence and prove the solution correct with induction:\\
+    2. Solve the following recurrence and prove the solution correct with induction:
     \begin{align*}
         T(1) &= 0\\
         T(n) &= n + 2 T(\frac{n}{2})
     \end{align*}
-    \textit{Solution}: $T(n) = n\;lg(n)$, by guessing.\\
+    \textit{Solution}: $T(n) = n\;lg(n)$, claimed.
     \begin{proof}
         For $k < n$, we have:
         \begin{align*}
@@ -54,7 +54,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 3 on data structure for insertion and max extraction for set of integers.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \bigskip
+    \newpage
     \noindent
     3. Suppose you want to be able to perform the following 2 operations on a set of integers.
     Insert a new item and remove the maximum item. Describe a data structure that supports this and
@@ -72,7 +72,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 4 on algorithm for finding shortest-path tree in a network.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \newpage
+    \bigskip
     \noindent
     4. Suppose you are given a network with $n$ cities, and a direct connection between each pair of
     cities with the distance between them. Given a starting city $s$, describe an algorithm to find
@@ -88,7 +88,7 @@
     weights from $s$ are already determined. Given a procedure \verb|EXTRACT-MIN()| to get $u$, the
     following describes several well known methods of implementing the procedure and the resulting
     overall time complexity of Dijkstra's shortest path algorithm ($E$ is the set of edges in the
-    network):\\
+    network):
     \begin{enumerate}[(a)]
         \item If \verb|EXTRACT-MIN| is implemented using a simple linked-list or array requiring
             linear search to find the minimum, Dijkstra's shortest path algorithm has time
@@ -98,12 +98,13 @@
             For connected networks (as in our case), this further reduces to $O(|E|\;lg\,|V|)$ or
             $O(|E|\;lg\,n)$.\\
         \item If \verb|EXTRACT-MIN| is implemented using a Fibonacci Heap, then Dijkstra's shortest
-            path algorithm has time complexity: $O(|V|\;lg\,|V| + |E|)$ or $O(n\;lg\,n + |E|)$.\\
+            path algorithm has time complexity: $O(|V|\;lg\,|V| + |E|)$ or $O(n\;lg\,n + |E|)$.
     \end{enumerate}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 6 on complexity classes.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \bigskip
     \noindent
     6. Show that \textsf{NL} $\subseteq \mathcal{P}$.\\
 
@@ -124,10 +125,10 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 8 on complexity classes.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \bigskip
+    \newpage
     \noindent
     8. Let $X$ be a problem that is in the class $\mathcal{NP}$. For each of the following, write if
-    it is ``True,'' ``False,'' or ``We don't know.'' Justify your answer.\\
+    it is ``True,'' ``False,'' or ``We don't know.'' Justify your answer.
     \begin{enumerate}[(a)]
         \item Solutions to $X$ can be verified with a polynomial-time algorithm.\\
 
@@ -152,7 +153,7 @@
             $\mathcal{NP}$-Hard, all problems in $\mathcal{NP}$ must be polynomial-time Karp
             reducible to SAT (by definition of $\mathcal{NP}$-Hard). In other words, SAT is ``at
             least as hard'' as $X$ and therefore SAT $\in \mathcal{P}$ implies $X \in
-            \mathcal{P}$.\\
+            \mathcal{P}$.
     \end{enumerate}
 
 \end{document}
