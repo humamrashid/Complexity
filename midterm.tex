@@ -66,8 +66,8 @@
     Max-Heap from a set of $n$ unsorted integers takes $O(n)$ time. Removing the maximum item is an
     $O(lg\,n)$ operation since returning the maximum can be done in constant time but maintaining
     the Max-Heap takes $O(lg\,n)$ time. Inserting an item into a Max-Heap with $n$ items also takes
-    $O(lg\,n)$ because of the Max-Heap maintenance procedure. (I am using Max-Priority Queue here as
-    defined in Cormen et al., effectively making it a simple abstraction over a Max-Heap).\\
+    $O(lg\,n)$ because of the Max-Heap maintenance procedure. (Using Max-Priority Queue here as
+    defined in Cormen et al. effectively makes it a simple abstraction over a Max-Heap.)\\
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 4 on algorithm for finding shortest-path tree in a network.
@@ -115,15 +115,15 @@
     starts at $s$ and nondeterministically guesses the vertices of a path from $s$ to $t$. The NLTM
     only records the position of the current vertex at each step on the work tape, not the entire
     path (so that it is restricted to logarithmic space usage). The NLTM nondeterministically
-    selects the next vertex from those vertices the current vertex directly points to. This action
-    is repeated until it reaches $t$ and the NLTM accepts or until it has gone for $m$ steps and
-    rejects, where $m$ is the number of vertices in the graph. This process shows that
-    \textsf{stCONN} is in \textsf{NL}.
+    selects the next vertex from the neighbors of the current one (i.e., those vertices the current
+    vertex directly points to). This action is repeated until it reaches $t$ and the NLTM accepts or
+    until it has gone for $n$ steps and rejects, where $n$ is the number of vertices in the graph.
+    This process shows that \textsf{stCONN} is in \textsf{NSPACE($log\,n$) $=$ NL}.
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 6 on complexity classes.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \bigskip
+    \newpage
     \noindent
     6. Show that \textsf{NL} $\subseteq \mathcal{P}$.\\
 
@@ -133,7 +133,7 @@
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 7 on complexity classes.
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \newpage
+    \bigskip
     \noindent
     7. How do we know that \textsf{NPSPACE $=$ PSPACE}?\\
 
