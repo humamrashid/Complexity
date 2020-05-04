@@ -40,15 +40,15 @@
         T(1) &= 0\\
         T(n) &= n + 2 T\bigg(\frac{n}{2}\bigg)
     \end{align*}
-    \textit{Solution}: $T(n) = n\;lg(n)$, claimed. We see that $T(1) = 1\;lg(1) = 0$.\\
+    \textit{Solution}: $T(n) = n\;log(n)$, claimed. We see that $T(1) = 1\;log(1) = 0$.\\
     \begin{proof}
         For $k < n$, we have:
         \begin{align*}
-            T(k) &= k\;lg(k)\\
+            T(k) &= k\;log(k)\\
             T(n) &= n + 2 T\bigg(\frac{n}{2}\bigg)\\
-                 &= n + 2 \bigg(\frac{n}{2}\;lg(n) - \frac{n}{2}\bigg)\\
-                 &= n + n\;lg(n) - n\\
-                 &= n\;lg(n)
+                 &= n + 2 \bigg(\frac{n}{2}\;log(n) - \frac{n}{2}\bigg)\\
+                 &= n + n\;log(n) - n\\
+                 &= n\;log(n)
         \end{align*}
     \end{proof}
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -64,9 +64,9 @@
     \textit{Answer}: One data structure that readily supports the given requirements is a
     \emph{Max-Priority Queue}. A Max-Priority Queue can be built on top of a Max-Heap. Building the
     Max-Heap from a set of $n$ unsorted integers takes $O(n)$ time. Removing the maximum item is an
-    $O(lg\,n)$ operation since returning the maximum can be done in constant time but maintaining
-    the Max-Heap takes $O(lg\,n)$ time. Inserting an item into a Max-Heap with $n$ items also takes
-    $O(lg\,n)$ because of the Max-Heap maintenance procedure. (Using Max-Priority Queue here as
+    $O(log\,n)$ operation since returning the maximum can be done in constant time but maintaining
+    the Max-Heap takes $O(log\,n)$ time. Inserting an item into a Max-Heap with $n$ items also takes
+    $O(log\,n)$ because of the Max-Heap maintenance procedure. (Using Max-Priority Queue here as
     defined in Cormen et al. effectively makes it a simple abstraction over a Max-Heap.)\\
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -94,11 +94,11 @@
             linear search to find the minimum, Dijkstra's shortest path algorithm has time
             complexity: $O(|V|^2)$ or $O(n^2)$.\\
         \item If \verb|EXTRACT-MIN| is implemented using a Binary-Min Heap, then Dijkstra's shortest
-            path algorithm has time complexity: $O((|V| + |E|)\;lg\,|V|)$ or $O((n + |E|)\;lg\,n)$.
-            For connected networks (as in our case), this further reduces to $O(|E|\;lg\,|V|)$ or
-            $O(|E|\;lg\,n)$.\\
+            path algorithm has time complexity: $O((|V| + |E|)\;log\,|V|)$ or $O((n +
+            |E|)\;log\,n)$. For connected networks (as in our case), this further reduces to
+            $O(|E|\;log\,|V|)$ or $O(|E|\;log\,n)$.\\
         \item If \verb|EXTRACT-MIN| is implemented using a Fibonacci Heap, then Dijkstra's shortest
-            path algorithm has time complexity: $O(|V|\;lg\,|V| + |E|)$ or $O(n\;lg\,n + |E|)$.
+            path algorithm has time complexity: $O(|V|\;log\,|V| + |E|)$ or $O(n\;log\,n + |E|)$.
     \end{enumerate}
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -118,7 +118,9 @@
     selects the next vertex from the neighbors of the current one (i.e., those vertices the current
     vertex directly points to). This action is repeated until it reaches $t$ and the NLTM accepts or
     until it has gone for $n$ steps and rejects, where $n$ is the number of vertices in the graph.
-    This process shows that \textsf{stCONN} is in \textsf{NSPACE($log\,n$) $=$ NL}.
+    Since the NLTM accepts iff the walk ends at $t$ in at most $n$ steps and the work tape needs to
+    only hold $O(log\,n)$ bits of information at any given step (i.e., the number of steps the walk
+    has run for), this process shows that \textsf{stCONN} is in \textsf{NSPACE($log\,n$) $=$ NL}.
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 6 on complexity classes.
