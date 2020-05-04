@@ -131,8 +131,25 @@
 
     \noindent
     \textit{Answer}: A language $L'$ is said to be \textsf{NL}-Complete if $L' \in$ \textsf{NL} and
-    for every $L \in$ \textsf{NL}, $L$ is \emph{logspace reducible} to $L'$. We know that
-    \textsf{stCONN} is \textsf{NL}-Complete.
+    for every $L \in$ \textsf{NL}, $L$ is \emph{log space reducible} to $L'$ (i.e., $L'$ is
+    \textsf{NL}-Hard as well). We know that \textsf{stCONN} is \textsf{NL}-Complete: \textsf{stCONN}
+    is already shown to be in \textsf{NL} above; to show that it is also \textsf{NL}-Hard can be
+    done by constructing a graph that represents the computation of the NLTM for any given problem $
+    L \in$ \textsf{NL}. In this reduction, the vertices of the graph correspond to the
+    configurations of the NLTM on input string $w$. If a configuration $C$ can yield another
+    configuration $C'$ in a single step of the NLTM, then the vertex corresponding to $C$ points to
+    the vertex corresponding to $C'$ in the graph. The NLTM then accepts $w$ when there exists some
+    path from the vertex corresponding to the start configuration $C_{start}$ leading to the vertex
+    corresponding to the accepting configuration $C_{accept}$.\\
+
+    \noindent
+    Given the \textsf{NL}-Completeness of \textsf{stCONN}, and knowing that a Turing machine that
+    uses space $s(n)$ runs in time $n2^{O(s(n))}$, we can say that the NLTM reducer described, which
+    runs in log space, also runs in polynomial time. This shows that any problem $L \in$ \textsf{NL}
+    is polynomial-time reducible to \textsf{stCONN}. We further know that \textsf{stCONN} is in
+    $\mathcal{P}$. Since any problem that is polynomial-time reducible to $\mathcal{P}$ is also in
+    $\mathcal{P}$, we have that $L \in$ \textsf{NL} $\Rightarrow L \in \mathcal{P}$, and therefore
+    \textsf{NL} $\subseteq \mathcal{P}$.\\
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 7 on complexity classes.
