@@ -40,7 +40,7 @@
         T(1) &= 0\\
         T(n) &= n + 2 T\bigg(\frac{n}{2}\bigg)
     \end{align*}
-    \textit{Solution}: $T(n) = n\;lg(n)$, claimed.\\
+    \textit{Solution}: $T(n) = n\;lg(n)$, claimed. We see that $T(1) = 1\;lg(1) = 0$.\\
     \begin{proof}
         For $k < n$, we have:
         \begin{align*}
@@ -116,11 +116,11 @@
     7. How do we know that \textsf{NPSPACE $=$ PSPACE}?\\
 
     \noindent
-    \textit{Answer}: This is a direct result of Savitch's theorem. Savitch's theorem tells us that
-    for space complexity, any nondeterministic Turing machine that uses $f(n)$ space can be
-    converted to a deterministic Turing machine that uses only $f^2(n)$ space. \textsf{NPSPACE $=$
-    PSPACE} is a direct result based on the fact that the square of any polynomial is still a
-    polynomial.\\
+    \textit{Answer}: This is a direct result of Savitch's theorem, which says \textsf{NSPACE$(s(n))
+    \subseteq$ SPACE$(s(n)^2)$}. That is, for space complexity, any nondeterministic Turing machine
+    that uses $s(n)$ space can be converted to a deterministic Turing machine that uses only
+    $s(n)^2$ space. \textsf{NPSPACE $=$ PSPACE} is a direct result based on the fact that the square
+    of any polynomial is still a polynomial.\\
 
     %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     % Problem 8 on complexity classes.
@@ -139,7 +139,7 @@
             then the claim would have been false (i.e., it would give us confidence that such an
             algorithm exists), but for the more general case of $X \in \mathcal{NP}$, the answer is
             still uncertain (until and unless it is also proven that $\mathcal{NP} \subseteq
-            \mathcal{P}$).\\
+            \mathcal{P} \Rightarrow \mathcal{P} = \mathcal{NP}$).\\
         \item If $X$ is $\mathcal{NP}$-Hard, then $X$ is $\mathcal{NP}$-Complete.\\
 
             \textit{True}. An $\mathcal{NP}$-Complete problem is one that is $\mathcal{NP}$-Hard and
@@ -152,8 +152,8 @@
             $\mathcal{NP}$-Completeness implies the problem is both in $\mathcal{NP}$ and
             $\mathcal{NP}$-Hard, all problems in $\mathcal{NP}$ must be polynomial-time Karp
             reducible to \textsf{SAT} (by definition of $\mathcal{NP}$-Hard). In other words,
-            \textsf{SAT} is ``at least as hard'' as $X$ and therefore \textsf{SAT} $\in \mathcal{P}$
-            implies $X \in \mathcal{P}$.
+            \textsf{SAT} is ``at least as hard'' as $X$ and therefore \textsf{SAT} $\in \mathcal{P}
+            \Rightarrow X \in \mathcal{P}$.
     \end{enumerate}
 
 \end{document}
